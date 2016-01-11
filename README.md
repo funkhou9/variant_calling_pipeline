@@ -179,6 +179,8 @@ samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV <out_merged_sorted.
 > ```
 > out.vcf is then processed with [`editTools`](https://github.com/funkhou9/editTools).
 
+[Variant call format specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf)
+
  
 
  
