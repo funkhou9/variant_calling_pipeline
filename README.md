@@ -161,7 +161,7 @@ samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV <out_merged_sorted.
 `-f` supplies reference file name  
 `-C` sets coefficient for downgrading [mapping qualities](http://maq.sourceforge.net/qual.shtml) (MQ) for reads containing excessive mismatches. Recommended value is 50 for BWA.  
 `-E` sets computation of base alignement qualities and ignores standard base qualities. See [Heng Li 2011](http://www.ncbi.nlm.nih.gov/pubmed/21320865)  
-`-Q` sets minimum base quality or base alignment quality for a base to be considered
+`-Q` sets minimum base quality or base alignment quality for a base to be considered  
 `-ug` sets format of output to uncompressed bcf (suggested for piping)  
 `-t` used to specify desired fields in output
 
