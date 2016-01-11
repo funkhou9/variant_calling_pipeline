@@ -9,7 +9,7 @@
 
 1. [Read Trimming](#read-trimming)
 2. [Mapping](#mapping)
-3. [Converting, Merging, Sorting and Indexing](#converting,-merging,-sorting,-and-indexing)
+3. [Converting, Merging, Sorting and Indexing](#converting,-merging,-sorting-and-indexing)
 4. [Variant Calling](#variant-calling)
 
 ## Read Trimming
