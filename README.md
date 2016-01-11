@@ -98,7 +98,7 @@ out.bam		"Binary alignment file" (BAM)
 ```
 ## Converting, Merging, Sorting and Indexing
 
-Prior to using alignment files for variant calling, files may need converting, libraries need merging, and merged alignments need sorting and indexing. These steps are acheived through a combination of software, [`Samtools`](http://www.htslib.org) and [`Picard`](hhttps://github.com/broadinstitute/picard).
+Prior to using alignment files for variant calling, files may need converting, libraries need merging, and merged alignments need sorting and indexing. These steps are acheived through a combination of software, [`Samtools`](http://www.htslib.org) and [`Picard`](https://github.com/broadinstitute/picard).
 
 #### DNA (Whole genome sequence)
 
