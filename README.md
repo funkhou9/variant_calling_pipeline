@@ -134,7 +134,7 @@ samtools index <out_merged_sorted.bam>
 
 The output from TopHat will already be in BAM format, but requires merging libraries using the same `samtools merge` command above.
 
-> In some instances, such as simultaneous RNA and DNA variant calling for the purposes of RNA editing detection, the merged RNA alignment files may need to be reordered to match the contig order of both the DNA alignment files and reference file. After building [`Picard`](https://github.com/broadinstitute/picard), this can be done using 
+> In some instances, such as simultaneous RNA and DNA variant calling for the purposes of RNA editing detection, the merged RNA alignment files may need to be reordered to match the contig order of both the DNA alignment files and reference file. After building [`Picard`](https://github.com/broadinstitute/picard), this can be done using
 > ```
 > java -jar $PICARD/ReorderSam.jar R=<reference.fa> I=<out_merged.bam> O=<out_merged_reordered.bam>
 > ```
@@ -154,7 +154,7 @@ Calling variants is done using the algorithm detailed in [Heng Li 2011](http://b
 #### Example of variant calling with either RNAseq or WGS data
 
 ```sh
-samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV <out_merged_sorted.bam> | bcftools call -O v -m -v > out.vcf
+samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV,SP <out_merged_sorted.bam> | bcftools call -O v -m -v > out.vcf
 ```
 ##### samtools mpileup v1.0
 
@@ -173,21 +173,10 @@ samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV <out_merged_sorted.
 `-v` sets output to only contain variant sites rather than statistics for all genomic positions
 
 > For RNA editing detection, both DNA and RNA alignments are used simultanously in the variant calling step, specifying both files with:
-> 
+>
 > ```sh
-> samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV <out_merged_sorted_dna.bam> <out_merged_reordered_rna.bam> | bcftools call -O v -m -v > out.vcf
+> samtools mpileup -f <reference.fa> -C50 -E -Q25 -ug -t DP,DV,SP <out_merged_sorted_dna.bam> <out_merged_reordered_rna.bam> | bcftools call -O v -m -v > out.vcf
 > ```
 > out.vcf is then processed with [`editTools`](https://github.com/funkhou9/editTools).
 
 [Variant call format specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf)
-
- 
-
- 
-
-
-
-
-
-
-
